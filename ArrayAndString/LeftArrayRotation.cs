@@ -3,9 +3,9 @@ namespace Rotation
   using System;
   using System.Linq;
   
-  public class RightArrayRotation
+  public class LeftArrayRotation
   {
-    public void Rotate1()
+     public void Rotate1()
     {
       int[] input = {1,2,3,4,5,6,7};
       int size = input.Length;
@@ -26,19 +26,25 @@ namespace Rotation
         rotation = rotation % size;
       }
 
-      for(int index = 0; index < size; index++)
+      for(int i = 0; i < rotation; i ++)
       {
-        if(rotation > index) // bifurcate at index 2 (make use of rotation number)
-        {
-          Console.Write(input[size + index - rotation] + " ");
-        }
-        else
-        {
-          Console.Write(input[index - rotation] + " ");
-        }
+        LeftRotateByOne(input, size);
       }
 
-        Console.WriteLine();
+      Array.ForEach(input, Console.Write);
+      Console.WriteLine();
+    }
+
+    private void LeftRotateByOne(int[] input, int size)
+    {
+      // index check of size-1
+      int temp = input[0];
+      for(int index = 0; index < size-1; index++)
+      {
+        input[index] = input[index + 1];
+      }
+
+      input[size-1] = temp;
     }
 
      public void Rotate2()
@@ -62,25 +68,22 @@ namespace Rotation
         rotation = rotation % size;
       }
 
-      for(int i = 0; i < rotation; i ++)
-      {
-        RightRotateByOne(input, size);
-      }
-
-      Array.ForEach(input, Console.Write);
-      Console.WriteLine();
+       LeftRotate(input, size, rotation);
     }
 
-    private void RightRotateByOne(int[] input, int size)
+    private void LeftRotate(int[] arr, int n, int k)
     {
-      // index check of size-1
-      int temp = input[size-1];
-      for(int index = size-1; index >0; index--)
-      {
-        input[index] = input[index -1];
-      }
-
-      input[0] = temp;
+        // To get the starting
+        // point of rotated array
+        int mod = k % n;
+ 
+        // Prints the rotated array
+        // from start position
+        for (int i = 0; i < n; ++i)
+            Console.Write(arr[(i + mod) % n] + " ");
+ 
+        Console.WriteLine();
     }
   }
 }
+
