@@ -1,10 +1,14 @@
-    RightArrayRotation r = new RightArrayRotation();
-    r.Rotate1();
-    r.Rotate2();
+RightArrayRotation r = new RightArrayRotation();
+r.Rotate1();
+r.Rotate2();
 
-    LeftArrayRotation l = new LeftArrayRotation();
-    l.Rotate1();
-    l.Rotate2();
+LeftArrayRotation l = new LeftArrayRotation();
+l.Rotate1();
+l.Rotate2();
 
-     IsomorphicValidator validate = new IsomorphicValidator();
-      validate.Validate();
+IsomorphicValidator validate = new IsomorphicValidator();
+validate.Validate();
+
+SmallestElement e = new SmallestElement();
+e.Find();
+      
