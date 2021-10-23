@@ -11,4 +11,16 @@ validate.Validate();
 
 SmallestElement e = new SmallestElement();
 e.Find();
+
+// Factorial driver code
+ int number = 5;
+    // Top Edge case
+    if(number < 0)
+    {
+        Console.WriteLine("Invalid Number");
+    }
+
+    Factorial factorial = new Factorial();
+    Console.WriteLine(factorial.Calculate(number));
+//
       
