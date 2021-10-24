@@ -1,0 +1,51 @@
+   #region data
+    int[,] input = new int[,]
+    {
+      {1,2,3,4},
+      {5,6,7,8},
+      {9,10,11,12},
+      {13,14,15,16}
+    };
+
+   #endregion
+
+    #region Private members
+
+    int rowStartIndex = 0;
+    int columnEndIndex = 3;
+    int rowEndIndex = 3;
+    int colStartIndex = 0;
+
+    #endregion
+
+  while(rowStartIndex < rowEndIndex && colStartIndex < columnEndIndex)
+  {
+
+    for(int col = colStartIndex; col< columnEndIndex; col++)
+    {
+      Console.WriteLine(input[rowStartIndex, col] + " ");
+    }
+
+    rowStartIndex++;
+
+    for(int row = rowStartIndex; row < rowEndIndex; row++)
+    {
+      Console.WriteLine(input[row, columnEndIndex] + " ");
+    }
+
+    columnEndIndex--;
+
+    for(int col = columnEndIndex; col >= colStartIndex; --col)
+    {
+      Console.WriteLine(input[rowEndIndex, columnEndIndex] + " ");
+    }
+
+    rowEndIndex--;
+
+    for(int row = rowEndIndex; row >= rowStartIndex; row--)
+    {
+      Console.WriteLine(input[row, colStartIndex] + " ");
+    }
+
+    colStartIndex++;
+  }
